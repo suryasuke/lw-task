@@ -10,7 +10,7 @@ export default function DocuUpload() {
   const [toggleDocForm, setToggleDocForm] = useState(false);
   const [applicantName, setApplicantName] = useState('');
   const [applicants, setApplicants] = useState([]);
-  const [hoveredId, setHoveredId] = useState(null);
+  
   const [clickedId, setClickedId] = useState(null);
   const [documents, setDocuments] = useState([]);
   const [DocumentName, setdocname] = useState('');
@@ -23,6 +23,7 @@ export default function DocuUpload() {
     setClickedDoc(id);
   }
 
+  console.log(clickedId);
   useEffect(() => {
   const interval = setInterval(() => {
     fetchApplicants();
@@ -56,8 +57,6 @@ export default function DocuUpload() {
     }
   };
 
-  const handleMouseOver = (id) => setHoveredId(id);
-  const handleMouseLeave = () => setHoveredId(null);
   const handleInputChange = (e) => setApplicantName(e.target.value);
   const handleinpChange = (e) => setdocname(e.target.value);
 
@@ -121,10 +120,10 @@ export default function DocuUpload() {
   let currentDocIndex = currentDocs.findIndex(doc => doc.id === clickedDoc);
 
   if (currentDocs.length > 0 && currentDocIndex < currentDocs.length - 1) {
-    // Move to next document in same applicant
+   
     setClickedDoc(currentDocs[currentDocIndex + 1].id);
   } else {
-    // Move to next applicant
+   
     const nextAppIndex = (currentAppIndex + 1) % applicants.length;
     const nextAppId = applicants[nextAppIndex].id;
 
@@ -147,10 +146,10 @@ const handleBack = async () => {
   let currentDocIndex = currentDocs.findIndex(doc => doc.id === clickedDoc);
 
   if (currentDocs.length > 0 && currentDocIndex > 0) {
-    // Move to previous document in same applicant
+    
     setClickedDoc(currentDocs[currentDocIndex - 1].id);
   } else {
-    // Move to previous applicant
+    
     const prevAppIndex = (currentAppIndex - 1 + applicants.length) % applicants.length;
     const prevAppId = applicants[prevAppIndex].id;
 
@@ -216,8 +215,8 @@ const handleBack = async () => {
           <div
             key={app.id}
             className="list-val"
-            onMouseOver={() => handleMouseOver(app.id)}
-            onMouseLeave={handleMouseLeave}
+           
+          
             onClick={() => fetchDocuments(app.id)}
           >
             <div className="list">
