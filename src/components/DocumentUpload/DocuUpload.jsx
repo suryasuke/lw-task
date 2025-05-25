@@ -50,7 +50,7 @@ export default function DocuUpload() {
     try {
       const result = await axios.get(`http://localhost:4000/get-document/${id}`);
      setDocuments(Array.isArray(result.data) ? result.data : []);
-
+     console.log(result);
       setClickedId(id);
     } catch (error) {
       console.error("Error fetching documents:", error);

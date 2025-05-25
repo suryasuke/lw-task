@@ -8,7 +8,7 @@ import DocumentUpload from './components/DocumentUpload/DocuUpload.jsx'
 
 
 function App() {
- 
+ console.log("app");
   return (
 <DocumentUpload />
   );
