@@ -1,0 +1,435 @@
+* {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  user-select: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  width: 100%;
+  height: 100px;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  margin-top: 70px;
+}
+
+.header h1 {
+  font-weight: 600;
+  font-size: 30px;
+  color: #333;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgb(0, 174, 255);
+  background-color: white;
+  border: 2px solid rgb(0, 174, 255);
+  height: 42px;
+  width: 180px;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  justify-content: center;
+  align-items: center;
+}
+.addAppcls{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 300px;
+  align-items: center;
+  
+}
+
+button:hover {
+  background-color: rgb(0, 174, 255);
+  color: white;
+  cursor: pointer;
+  transform: scale(1.03);
+  box-shadow: 0px 4px 10px rgba(0, 174, 255, 0.3);
+}
+
+hr {
+  color: gray;
+  margin: 20px 0;
+}
+
+.appAdd {
+  width: 40%;
+  min-width: 300px;
+  height: auto;
+  padding: 30px;
+  border-radius: 12px;
+  background-color: #f0f8ff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin: 20px auto;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-in-out;
+  position: absolute;
+  top: 40%;
+  left: 29.5%;
+}
+.geted{
+  opacity: 0.4;
+}
+.CancelIcon{
+  color:rgba(255, 68, 0, 0.667);
+  font-size:20px ;
+}
+.CancelIcon:hover{
+  cursor: pointer;
+}
+.app-loc{
+  display: flex;
+  
+  justify-content: center;
+  align-items: center;
+}
+.list-app{
+  display: flex;
+  flex-direction: row;
+
+}
+.list-val{
+  background-color: transparent;
+  color: rgb(8, 8, 8);
+  width: 130px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 400;
+  margin-left: 10px;
+  margin-top: 40px;
+
+  border-radius:9px ;
+
+  
+}
+.list-val span{
+  background-color: rgb(0, 166, 255);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  color: white;
+}
+
+
+
+
+.list-val span:hover{
+  background-color:  rgb(3, 136, 208);
+  cursor: pointer;
+}
+.list-val:nth-child(1){
+  margin-left: 40px;
+}
+.app-loc{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 6px;
+  border-radius: 9px;
+}
+.hover-line{
+  color: rgb(0, 166, 255);
+}
+
+.list .colors{
+  color: rgb(0, 166, 255);
+}
+.documents{
+  width: 90%;
+  height: auto;
+  
+  border-radius: 9px;
+  color: rgb(148, 147, 147);
+}
+
+.list-val span{
+  font-size: 15px;
+}
+.appAdd h3 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #444;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.doc-items{
+  background-color: rgb(0, 174, 255);
+  width: 100px;
+  height: 40px;
+  border-radius: 9px;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.appAdd input[type="text"] {
+  width: 80%;
+  height: 35px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.appAdd input[type="text"]:focus {
+  border-color: rgb(0, 174, 255);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.documents{
+  display: flex;
+ margin-left: 50px;
+ gap: 20px;
+  flex-direction: column;
+  margin-top: 30px;
+  width: 30%;
+}
+.total{
+  margin-top:50px ;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 3%;
+  align-items: center;
+}
+.btnad{
+    display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgb(0, 174, 255);
+  background-color: white;
+  border: 2px solid rgb(0, 174, 255);
+  height: 42px;
+  width: 180px;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  justify-content: center;
+  align-items: center;
+}
+.uploads{
+  width: 90%;
+  background-color: aliceblue;
+  margin-right: 50px;
+  min-height: 150px;
+  max-height: auto;
+}
+.uploads {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1rem;
+  border: 1px solid black;
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+}
+
+.upload-header {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.upload-header button {
+  padding: 6px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s ease;
+}
+
+.choose-btn {
+  background-color: #2d8cf0;
+  color: #fff;
+  border-radius: 8px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload-btn {
+  background-color: #5cadff;
+  color: #fff;
+}
+
+.cancel-btn {
+  background-color: #d3e0f3;
+  color: #333;
+}
+
+.upload-list {
+  border-top: 1px solid #eee;
+  padding-top: 1rem;
+}
+
+.upload-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 1rem;
+}
+
+.upload-thumb {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.upload-info {
+  flex-grow: 1;
+}
+
+.file-name {
+  margin: 0;
+  font-weight: 500;
+}
+
+.file-size {
+  color: gray;
+  font-size: 13px;
+  margin-right: 8px;
+}
+
+.file-status {
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.completed {
+  background-color: #e7f7ed;
+  color: #00b67a;
+}
+
+.upload-action .delete-icon {
+  font-size: 16px;
+  cursor: pointer;
+  color: #d32f2f;
+}
+.upload-item {
+  animation: fadeIn 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-top: 10px;
+  background-color: #f9f9f9;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.upload-thumb {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.file-icon-preview {
+  font-size: 18px;
+  padding: 12px;
+  background-color: #eee;
+  border-radius: 8px;
+  width: 200px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+}
+.next-back{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+}
+.upload-info {
+  flex-grow: 1;
+}
+
+.file-name {
+  font-weight: 600;
+  margin: 0;
+}
+
+.file-size {
+  font-size: 12px;
+  color: #888;
+}
+
+.file-status {
+  font-weight: 700;
+  text-transform: capitalize;
+  margin-left: 8px;
+}
+
+.file-status.pending {
+  color: orange;
+}
+
+.file-status.completed {
+  color: green;
+}
+
+.file-status.failed {
+  color: red;
+}
+
+.upload-action {
+  cursor: pointer;
+  color: #cc0000;
+  font-weight: bold;
+}

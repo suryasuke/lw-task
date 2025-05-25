@@ -1,0 +1,74 @@
+SURYA S
+SOFTWARE DEVELOPER
+8110974040 | suryaffa648@gmail.com | www.linkedin.com/in/surya-s-99b922272
+
+SUMMARY
+Software Developer | Java & PERN Stack | Scalable Web Applications & Software Products
+Results-driven Software Developer specializing in Java, PostgreSQL, Express.js, React.js, and
+Node.js. Experienced in developing scalable web applications and robust software products.
+Skilled in optimizing workflows, enhancing user experiences, and solving complex problems.
+Strong project management abilities, consistently delivering high-quality, business-driven
+solutions.
+
+PROFESSIONAL EXPERIENCE
+PERN Stack Intern - Aalan Tech Soft (Aug 2024)
+Passionate PERN Stack Developer skilled in React.js, Node.js, Express.js, and PostgreSQL.
+Developed dynamic web applications to enhance user engagement.
+Gained expertise in state management, API development, and database optimization
+for efficient performance.
+Focused on building scalable, high-performance applications to improve user
+experience.
+Strong team player, assisting in tasks to improve workflow efficiency.
+React Developer Intern - Parts2Products (Mar 2024)
+Developed Fishza, an e-commerce platform using React.js, improving website
+speed and reducing bounce rates.
+Led a 4-member team, optimizing workflows for better project execution.
+Conducted JavaScript training for 15+ students, enhancing their problem-solving skills.
+Optimized UI performance in React by efficiently managing state and rendering
+processes.
+Proficient in React state management, ensuring smooth user experience and
+performance.
+Maintained high-level expertise in React state management strategies.
+
+TECHNICAL SKILLS
+Frontend: HTML5, CSS3, JavaScript, React.js, Bootstrap, Figma.
+Backend: Node.js, Express.js, REST APIs, PostgreSQL.
+Programming Languages: JavaScript, Java.
+Version Control: Git, GitHub.
+Methodologies: Agile, Waterfall Model.
+
+EDUCATION
+BACHELOR OF ENGINEERING COMPUTER SCIENCE AND ENGINEERING , SRI RANGANATHAR INSTITUTE
+OF ENGINEERING AND TECHNOLOGY,2021-2025 (CGPA: 8.1)
+
+LANGUAGE
+English - proficient
+Tamil – Advanced Proficiency
+
+PROJECTS
+Interest Grower – A platform to increase the interest of actual amount.
+Fishza – E-commerce website optimized for speed and user engagement | Media Link
+Travel Tracker – A location-based web application for travel logging | Media Link
+Weather Application – Real-time weather updates using API integration | Media Link
+Simon Game – Interactive web game built using JavaScript | Game Link
+Dkeeper – A notes-keeping app inspired by Google Keep.
+
+STRENGTHS
+Soft Skills
+Strong in communication, leadership, and team collaboration, focused on
+problem- solving
+Business Acumen
+Proficient in business knowledge and critical thinking technique
+
+CERTIFICATIONS
+Web Development Bootcamp – PERN Stack (2024)
+Full Stack Web Development
+API Student Expert (Postman)
+
+KEY ACHIEVEMENTS
+Leadership and Mentorship
+Served as Secretary for the CSE Department for one year, where I organized
+and managed important events, enhancing technical knowledge among
+students
+
+
