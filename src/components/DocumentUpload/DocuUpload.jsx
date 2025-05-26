@@ -2,8 +2,19 @@ import React, { useEffect, useState } from 'react';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import DangerousIcon from '@mui/icons-material/Dangerous';
 import DeleteIcon from '@mui/icons-material/Delete';
-import axios from 'axios';
 import './DocuUpload.css';
+import {
+  getApplicants,
+  addApplicant,
+  deleteApplicant,
+  addDocument,
+  uploadFile,
+  getDocumentsByApplicantId , 
+  deleteDocument
+} 
+from '../../API/api';
+
+
 
 export default function DocuUpload() {
   const [toggleApplicantForm, setToggleApplicantForm] = useState(false);
@@ -23,33 +34,41 @@ export default function DocuUpload() {
     setClickedDoc(id);
   }
 
+console.log('documents' , documents);
+
   console.log(clickedId);
   useEffect(() => {
-  const interval = setInterval(() => {
+ 
     fetchApplicants();
     if (clickedId) {
       fetchDocuments(clickedId);
     }
-  }, 3000);
 
-  return () => clearInterval(interval);
+
+  
 }, [clickedId]);
+
+console.log('applicants name ' , applicants)
 
 
   const fetchApplicants = async () => {
     try {
-      const result = await axios.get("http://localhost:4000/get-Applicant");
-      setApplicants(result.data);
+      const result = await getApplicants();
+      console.log("from front-end" , result.data);
+      setApplicants(result);
     } catch (error) {
       console.error("Error fetching applicants:", error);
     }
   };
 
+  
+
   const fetchDocuments = async (id) => {
     if (!id) return;
     try {
-      const result = await axios.get(`http://localhost:4000/get-document/${id}`);
-     setDocuments(Array.isArray(result.data) ? result.data : []);
+    const result = await getDocumentsByApplicantId(id);
+    console.log('data from frontend' , result)
+     setDocuments(Array.isArray(result) ? result : []);
      console.log(result);
       setClickedId(id);
     } catch (error) {
@@ -60,12 +79,14 @@ export default function DocuUpload() {
   const handleInputChange = (e) => setApplicantName(e.target.value);
   const handleinpChange = (e) => setdocname(e.target.value);
 
-  const addApplicant = () => setToggleApplicantForm(true);
+  const showApplicantForm = () => setToggleApplicantForm(true);
+
+console.log(applicantName);
 
   const handleAddApplicant = async () => {
     if (applicantName && applicantName.trim() !== "") {
       try {
-        await axios.post("http://localhost:4000/add-Applicant", { app: applicantName });
+        await addApplicant(applicantName);
         await fetchApplicants();
         setToggleApplicantForm(false);
         setApplicantName('');
@@ -83,10 +104,7 @@ export default function DocuUpload() {
       return;
     }
     try {
-      const result = await axios.post("http://localhost:4000/add-document", {
-        applicant_id: clickedId,
-        doc_name: DocumentName
-      });
+      const result = await addDocument(clickedId , DocumentName)
       console.log(result);
       await fetchDocuments(clickedId);
       setToggleDocForm(false);
@@ -98,7 +116,9 @@ export default function DocuUpload() {
 
   const handleDeleteApplicant = async (id) => {
     try {
-      const result = await axios.delete(`http://localhost:4000/delete-Applicant/${id}`);
+      console.log('delete applicant' , id)
+      await deleteDocument(id);
+      const result = await deleteApplicant(id);
       console.log(result);
       await fetchApplicants();
       if (clickedId === id) {
@@ -127,7 +147,7 @@ export default function DocuUpload() {
     const nextAppIndex = (currentAppIndex + 1) % applicants.length;
     const nextAppId = applicants[nextAppIndex].id;
 
-    const result = await axios.get(`http://localhost:4000/get-document/${nextAppId}`);
+    const result = await getDocumentsByApplicantId(nextAppId);
     const nextDocs = Array.isArray(result.data) ? result.data : [];
 
     setClickedId(nextAppId);
@@ -153,7 +173,7 @@ const handleBack = async () => {
     const prevAppIndex = (currentAppIndex - 1 + applicants.length) % applicants.length;
     const prevAppId = applicants[prevAppIndex].id;
 
-    const result = await axios.get(`http://localhost:4000/get-document/${prevAppId}`);
+    const result = await getDocumentsByApplicantId(prevAppId)
     const prevDocs = Array.isArray(result.data) ? result.data : [];
 
     setClickedId(prevAppId);
@@ -161,6 +181,8 @@ const handleBack = async () => {
     setClickedDoc(prevDocs.length > 0 ? prevDocs[prevDocs.length - 1].id : null);
   }
 };
+
+
 
 
   return (
@@ -203,7 +225,7 @@ const handleBack = async () => {
       <div className={toggleApplicantForm ? 'geted' : ''}>
         <div className='header'>
           <h1>Document Upload</h1>
-          <button onClick={addApplicant}>
+          <button onClick={showApplicantForm}>
             <AddCircleOutlineIcon /> Add Applicant
           </button>
         </div>
@@ -211,7 +233,7 @@ const handleBack = async () => {
       </div>
 
       <div className="list-app">
-        {applicants.map(app => (
+        {applicants?.map(app => (
           <div
             key={app.id}
             className="list-val"
@@ -290,17 +312,10 @@ const handleBack = async () => {
 
                   const formData = new FormData();
                   formData.append('file', selectedFile);
-
+                  
+console.log("frontend formdata" , formData);
                   try {
-                    const res = await axios.post(
-                      `http://localhost:4000/upload/${clickedDoc}`,
-                      formData,
-                      {
-                        headers: {
-                          'Content-Type': 'multipart/form-data'
-                        }
-                      }
-                    );
+                   await uploadFile(clickedDoc , formData)
                     setUploadStatus('Completed');
                     alert("File uploaded successfully");
                   } catch (error) {
