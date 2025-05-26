@@ -47,6 +47,8 @@ export const uploadFile = async (req, res) => {
   console.log('here to upload' , docId);
   const filePath = req.file ? req.file.path : null;
 
+  
+
   if (!filePath) {
     return res.status(400).json({ error: 'File not uploaded' });
   }
